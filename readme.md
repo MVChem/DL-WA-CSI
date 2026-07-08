@@ -7,7 +7,7 @@
 The pipeline leverages on-the-fly simulation to generate training data. It combines anatomical priors (from the IXI dataset) with synthetic metabolic curves and chemical shifts to simulate realistic MRS/CSI datasets.
 
 * **Model:** FCA-UNet (32x32 sample size, 72 spectral channels).
-* **Simulation:** Powered by [MRSpy](https://github.com/txz32102/MRSpy), a custom-built library for magnetic resonance spectroscopy simulation and plotting.
+* **Simulation:** Powered by [MRSpy](https://gitee.com/txz32102/MRSpy), a custom-built library for magnetic resonance spectroscopy simulation and plotting.
 * **Data Strategy:** Uses dynamic noise levels and random smooth metabolic curves to ensure model robustness.
 
 ---
@@ -56,7 +56,7 @@ This project requires **MRSpy**. Ensure you have it installed along with other d
 
 ```bash
 # Clone and install MRSpy first
-git clone https://github.com/txz32102/MRSpy
+git clone https://gitee.com/txz32102/MRSpy
 cd MRSpy
 pip install -e .
 
@@ -97,7 +97,7 @@ During training, the script automatically saves visualizations to the `log/` dir
 
 ## 🔗 Related Library
 
-This project relies heavily on **[MRSpy](https://github.com/txz32102/MRSpy)** for:
+This project relies heavily on **[MRSpy](https://gitee.com/txz32102/MRSpy)** for:
 
 * `mrspy.sim.sim`: Simulating the CSI signal physics.
 * `mrspy.plot`: High-quality spectral and spatial visualization.
