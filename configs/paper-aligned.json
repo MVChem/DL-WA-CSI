@@ -1,0 +1,83 @@
+{
+  "schema": "reference_metadata_only_not_consumed_by_cli",
+  "warning": "This file separates documented values from implementation choices; it is not a runnable model or training configuration.",
+  "acquisition": {
+    "matrix_size": [32, 32],
+    "wa_center_repetitions": 263,
+    "wa_total_repetitions": 68106,
+    "ua_analytical_weight": 66.509765625,
+    "coherent_sum": true,
+    "normalization": "center",
+    "normalization_source": "implementation convention; exact paper preprocessing unavailable"
+  },
+  "model": {
+    "provenance": "implementation defaults; widths/depth/heads were not specified in the supplied documents",
+    "in_channels": 72,
+    "channels": [72, 72, 72, 72],
+    "blocks_per_stage": 2,
+    "attention_heads": [4, 4, 4, 4],
+    "attention_pool_size": [8, 8],
+    "query_chunk_size": 1024,
+    "temporal_heads": 8,
+    "temporal_layers": 2,
+    "temporal_mlp_ratio": 4.0,
+    "spectral_reduction": 8,
+    "norm_groups": 8,
+    "dropout": 0.0,
+    "residual_output": true
+  },
+  "training": {
+    "provenance": "reported optimizer/schedule plus configurable implementation defaults",
+    "epochs": 150,
+    "optimizer": "Adam",
+    "betas": [0.9, 0.999],
+    "loss": "MSE",
+    "initial_learning_rate": 0.0003,
+    "minimum_learning_rate": 0.000001,
+    "scheduler": "CosineAnnealingLR",
+    "augmentations": ["horizontal_flip", "vertical_flip", "intensity_scale"],
+    "noise_std_bounds": "both CLI bounds are required and must be calibrated by the user; no paper values were supplied"
+  },
+  "implemented_preprocessing": {
+    "network_input_representation": "magnitude_fid",
+    "network_output_representation": "real_valued_magnitude_fid_estimate",
+    "input_scale_quantile": 0.995,
+    "anatomy_normalization": "bilinear resize followed by per-image min-max",
+    "anatomy_size": [256, 256],
+    "temporal_dynamics": "one global curve per sample and metabolite in the default trainer",
+    "spatial_phase": "none in the default trainer",
+    "provenance": "explicit implementation fallback; exact study preprocessing was unavailable"
+  },
+  "simulation": {
+    "spectral_points": 72,
+    "spectral_bandwidth_hz": 4065.0,
+    "implementation_default_peak_offsets_hz": [0.0, -55.0, -209.0],
+    "implementation_default_t2_seconds": [0.08, 0.07, 0.06],
+    "spectral_defaults_source": "configurable placeholders; exact paper values unavailable"
+  },
+  "point_response": {
+    "interpolation_points": 262144,
+    "ua_fwhm_voxels": 1.2071401397,
+    "wa_fwhm_voxels": 1.9803230108,
+    "reported_dl_wa_fwhm_voxels_requires_compatible_checkpoint_preprocessing_and_anatomy": 1.221
+  },
+  "reliable_recovery": {
+    "context_sampling": "IID uniform with replacement; implementation choice because paper probabilities and seed are unavailable",
+    "concentrations_mM": {"start": 0.25, "stop": 12.0, "step": 0.25},
+    "repeats_per_level": 100,
+    "tube_size": [5, 5],
+    "tube_corners_xy": [[4, 9], [11, 9], [18, 9], [25, 9], [4, 20], [11, 20], [18, 20], [25, 20]],
+    "target_tube_index_default_from_artwork": 5,
+    "nrmse_threshold_percent_strict": 10.0,
+    "reference_probability": 0.95
+  },
+  "not_specified_in_documents": [
+    "model widths/depths/heads",
+    "batch size",
+    "random seeds and dataset split",
+    "augmentation range",
+    "exact spectral and phase model",
+    "noise calibration and fixed input scaling",
+    "comparator hyperparameters"
+  ]
+}

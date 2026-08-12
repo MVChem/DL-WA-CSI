@@ -1,4 +1,4 @@
-"""Legacy import-path alias; the historical constructor/checkpoints differ."""
+"""Legacy import path for the new API; historical constructor weights differ."""
 
 from dlwa_csi.models import PriorInformedUNet3D
 
