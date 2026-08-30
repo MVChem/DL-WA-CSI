@@ -1,0 +1,80 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dlwa-csi"
+version = "0.2.0"
+description = "Acquisition-matched prior-informed reconstruction for dynamic deuterium metabolic imaging"
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [
+  {name = "Hongkang Chu"},
+  {name = "Xinjie Liu"},
+  {name = "Gang Chen"},
+  {name = "Jinrui Zhao"},
+  {name = "Hong Shi"},
+  {name = "Elton T. Montrazi"},
+  {name = "Xin Zhou"},
+  {name = "Maili Liu"},
+  {name = "Chaoyang Liu"},
+  {name = "Lucio Frydman"},
+  {name = "Qingjia Bao"}
+]
+keywords = [
+  "chemical shift imaging",
+  "deep learning",
+  "deuterium metabolic imaging",
+  "magnetic resonance spectroscopy"
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Science/Research",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Topic :: Scientific/Engineering :: Medical Science Apps."
+]
+dependencies = [
+  "torch>=2.0",
+  "numpy>=1.24",
+  "Pillow>=9.0",
+  "tqdm>=4.65"
+]
+
+[project.optional-dependencies]
+dev = [
+  "build>=1.2",
+  "pytest>=7.4",
+  "ruff>=0.6"
+]
+
+[project.urls]
+Homepage = "https://gitee.com/txz32102/DL-WA-CSI"
+Repository = "https://gitee.com/txz32102/DL-WA-CSI.git"
+
+[project.scripts]
+dlwa-train = "dlwa_csi.training:main"
+dlwa-infer = "dlwa_csi.inference:main"
+
+[tool.setuptools]
+py-modules = ["train", "infer"]
+
+[tool.setuptools.packages.find]
+include = ["dlwa_csi*", "scripts*", "model*"]
+
+[tool.setuptools.data-files]
+"share/dlwa-csi" = ["CITATION.cff", "THIRD_PARTY_NOTICES.md"]
+"share/dlwa-csi/configs" = ["configs/paper-aligned.json"]
+"share/dlwa-csi/third_party_licenses" = ["third_party_licenses/Apache-2.0.txt"]
+
+[tool.pytest.ini_options]
+addopts = "-ra"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]

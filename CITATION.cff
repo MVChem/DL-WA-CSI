@@ -1,0 +1,70 @@
+cff-version: 1.2.0
+message: >-
+  If you use this software, please cite this repository and the accompanying
+  manuscript using the metadata below.
+title: DL-WA-CSI
+type: software
+authors:
+  - family-names: Chu
+    given-names: Hongkang
+  - family-names: Liu
+    given-names: Xinjie
+  - family-names: Chen
+    given-names: Gang
+  - family-names: Zhao
+    given-names: Jinrui
+  - family-names: Shi
+    given-names: Hong
+  - family-names: Montrazi
+    given-names: Elton T.
+  - family-names: Zhou
+    given-names: Xin
+  - family-names: Liu
+    given-names: Maili
+  - family-names: Liu
+    given-names: Chaoyang
+  - family-names: Frydman
+    given-names: Lucio
+  - family-names: Bao
+    given-names: Qingjia
+version: 0.2.0
+date-released: 2026-08-12
+repository-code: https://gitee.com/txz32102/DL-WA-CSI
+url: https://gitee.com/txz32102/DL-WA-CSI
+abstract: >-
+  Acquisition-matched prior-informed reconstruction for dynamic deuterium
+  metabolic imaging with weighted-average chemical-shift imaging.
+keywords:
+  - chemical shift imaging
+  - deep learning
+  - deuterium metabolic imaging
+  - magnetic resonance spectroscopy
+preferred-citation:
+  type: article
+  title: >-
+    Balancing Sensitivity and Spatial Fidelity in Deuterium Metabolic Imaging
+    with Weighted-Average CSI and Prior-Informed Deep Learning Reconstruction
+  authors:
+    - family-names: Chu
+      given-names: Hongkang
+    - family-names: Liu
+      given-names: Xinjie
+    - family-names: Chen
+      given-names: Gang
+    - family-names: Zhao
+      given-names: Jinrui
+    - family-names: Shi
+      given-names: Hong
+    - family-names: Montrazi
+      given-names: Elton T.
+    - family-names: Zhou
+      given-names: Xin
+    - family-names: Liu
+      given-names: Maili
+    - family-names: Liu
+      given-names: Chaoyang
+    - family-names: Frydman
+      given-names: Lucio
+    - family-names: Bao
+      given-names: Qingjia
+  year: 2026
